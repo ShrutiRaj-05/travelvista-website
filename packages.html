@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <style>
+      body {
+        font-family: "Segoe UI", sans-serif;
+      }
+      .navbar {
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      .hero-img {
+        height: 420px;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+      .section-title {
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+      .highlight-card {
+        transition: 0.3s;
+        border-radius: 10px;
+      }
+      .highlight-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+      }
+       footer {
+        background: #f8f9fa;
+        padding: 20px 0;
+        margin-top: 50px;
+      }
+  </style>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+
+    <title>Our Travel Packages - TravelVista</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+      <a class="navbar-brand" href="#">TravelVista</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about.html">About</a>
+          </li>
+          <li class="nav-item dropdown active">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Packages
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="family-tours.html">Family Tours</a>
+              <a class="dropdown-item" href="honeymoon-packages.html">Honeymoon Packages</a>
+              <a class="dropdown-item" href="adventure-trips.html">Adventure Trips</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact.html">Contact Us</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input
+            class="form-control mr-sm-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">
+            Search
+          </button>
+        </form>
+      </div>
+    </nav>
+
+    <!-- Packages Section -->
+    <div class="container my-5">
+      <h2 class="text-center mb-4">Our Popular Packages</h2>
+      <p class="text-center text-muted mb-5">
+        Explore our curated selection of travel experiences designed just for you.
+      </p>
+
+      <div class="row">
+        <!-- Family Tours -->
+        <div class="col-md-4 mb-4" id="family-tours">
+          <div class="card h-100 shadow-sm">
+            <img
+              src="family1.jpg"
+              class="card-img-top"
+              alt="Family Tour"
+              style="height: 200px; object-fit: cover"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Family Tours</h5>
+              <p class="card-text">
+                Create lasting memories with fun-filled activities for all ages.
+                Safe, comfortable, and designed for family bonding.
+              </p>
+              <ul class="list-unstyled text-muted small mb-3">
+                <li>✓ Kid-friendly accommodations</li>
+                <li>✓ Guided sightseeing</li>
+                <li>✓ Flexible itineraries</li>
+              </ul>
+              <a href="family-tours.html" class="btn btn-primary d-block">View Details &raquo;</a>
+              <div class="mt-3 text-center">
+                <small class="text-muted">Starting from <strong>$499</strong> per person</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Honeymoon Packages -->
+        <div class="col-md-4 mb-4" id="honeymoon-packages">
+          <div class="card h-100 shadow-sm">
+            <img
+              src="honeymoon.jpg"
+              class="card-img-top"
+              alt="Honeymoon Package"
+              style="height: 200px; object-fit: cover"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Honeymoon Packages</h5>
+              <p class="card-text">
+                Romantic getaways to the world's most beautiful destinations.
+                Enjoy private dinners, luxury stays, and scenic views.
+              </p>
+              <ul class="list-unstyled text-muted small mb-3">
+                <li>✓ Candlelight dinners</li>
+                <li>✓ Private beach access</li>
+                <li>✓ Spa sessions</li>
+              </ul>
+              <a href="honeymoon-packages.html" class="btn btn-primary d-block">View Details &raquo;</a>
+              <div class="mt-3 text-center">
+                <small class="text-muted">Starting from <strong>$899</strong> per couple</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Adventure Trips -->
+        <div class="col-md-4 mb-4" id="adventure-trips">
+          <div class="card h-100 shadow-sm">
+            <img
+              src="adventure.jpg"
+              class="card-img-top"
+              alt="Adventure Trip"
+              style="height: 200px; object-fit: cover"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Adventure Trips</h5>
+              <p class="card-text">
+                For the thrill-seekers! Experience hiking, diving, paragliding,
+                and more in breathtaking remote locations.
+              </p>
+              <ul class="list-unstyled text-muted small mb-3">
+                <li>✓ Expert guides included</li>
+                <li>✓ Equipment provided</li>
+                <li>✓ Off-road experiences</li>
+              </ul>
+              <a href="adventure-trips.html" class="btn btn-primary d-block">View Details &raquo;</a>
+              <div class="mt-3 text-center">
+                <small class="text-muted">Starting from <strong>$299</strong> per person</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+      <p> © 2017-2025 TravelVista — Explore. Dream. Discover. </p>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

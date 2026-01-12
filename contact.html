@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta
+      name="description"
+      content="Discover travel destinations, adventure tours, and customized holiday packages with TravelVista. Your trusted partner for memorable journeys."
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <title>Plan Your Trip with Us</title>
+  <style>
+    .custom-card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 12px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .custom-card input {
+      display: none;
+    }
+    .custom-card label {
+      cursor: pointer;
+      font-weight: 500;
+    }
+    .custom-card:hover {
+      border-color: #0d6efd;
+    }
+    .custom-card input:checked + label {
+      color: #0d6efd;
+      font-weight: 600;
+    }
+    .custom-card input:checked ~ label,
+    .custom-card:has(input:checked) {
+      background-color: #f0f7ff;
+      border-color: #0d6efd;
+    }
+    footer {
+      background: #f8f9fa;
+      padding: 20px 0;
+      margin-top: 50px;
+    }
+  </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+      <a class="navbar-brand" href="#">TravelVista</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Packages
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="family-tours.html">Family Tours</a>
+              <a class="dropdown-item" href="honeymoon-packages.html"
+                >Honeymoon Packages</a
+              >
+              <a class="dropdown-item" href="adventure-trips.html"
+                >Adventure Trips</a
+              >
+            </div>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="contact.html">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container my-5">
+      <h2 class="text-center mb-3">Contact TravelVista</h2>
+      <p class="text-center mb-4">
+        Plan your next journey with us — just fill in the details below.
+      </p>
+      <form id="contactForm">
+        <div class="row">
+          <!-- Full Name -->
+          <div class="col-md-6 mb-3">
+            <label for="name">Full Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              placeholder="Enter your full name"
+              required
+            />
+          </div>
+          <!-- Email -->
+          <div class="col-md-6 mb-3">
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="name@example.com"
+              required
+            />
+          </div>
+        </div>
+        <div class="row">
+          <!-- Phone -->
+          <div class="col-md-6 mb-3">
+            <label for="phone">Mobile Number</label>
+            <input
+              type="tel"
+              class="form-control"
+              id="phone"
+              placeholder="+91 XXXXX XXXXX"
+            />
+          </div>
+          <!-- Travel Date -->
+          <div class="col-md-6 mb-3">
+            <label for="date">Preferred Travel Date</label>
+            <input type="date" class="form-control" id="date" />
+          </div>
+        </div>
+        <!-- Button to show travel type -->
+        <button
+          type="button"
+          class="btn btn-outline-primary mb-3"
+          onclick="showTravelType()"
+        >
+          Select Type of Travel
+        </button>
+        <!-- Travel Type (Hidden initially) -->
+        <div
+          class="form-group mb-3"
+          id="travelTypeSection"
+          style="display: none"
+        >
+          <label for="travelType">Type of Travel</label>
+          <select class="form-control" id="travelType">
+            <option value="">Choose an option</option>
+            <option>Leisure Trip</option>
+            <option>Adventure Tour</option>
+            <option>Family Vacation</option>
+            <option>Honeymoon</option>
+            <option>Business Travel</option>
+          </select>
+        </div>
+        <div class="form-group mt-3">
+          <label class="font-weight-bold">Preferred Destination(s)</label>
+          <div class="row mt-2">
+            <div class="col-md-6 col-lg-3">
+              <div class="custom-card">
+                <input type="checkbox" id="beach" />
+                <label for="beach">🏖 Beach</label>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+              <div class="custom-card">
+                <input type="checkbox" id="mountains" />
+                <label for="mountains">⛰ Mountains</label>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+              <div class="custom-card">
+                <input type="checkbox" id="history" />
+                <label for="history">🏛 Historical Places</label>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+              <div class="custom-card">
+                <input type="checkbox" id="wildlife" />
+                <label for="wildlife">🦁 Wildlife</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group mb-4">
+          <label class="d-block mb-2">Estimated Budget</label>
+          <div
+            class="btn-group btn-group-toggle flex-wrap"
+            data-toggle="buttons"
+          >
+            <label class="btn btn-outline-success m-1">
+              <input type="radio" name="budget" value="below20k" /> Below
+              ₹20,000
+            </label>
+            <label class="btn btn-outline-success m-1">
+              <input type="radio" name="budget" value="20to50k" /> ₹20,000 -
+              ₹50,000
+            </label>
+            <label class="btn btn-outline-success m-1">
+              <input type="radio" name="budget" value="50to1l" /> ₹50,000 -
+              ₹1,00,000
+            </label>
+            <label class="btn btn-outline-success m-1">
+              <input type="radio" name="budget" value="above1l" /> Above
+              ₹1,00,000
+            </label>
+          </div>
+        </div>
+        <div class="form-group mb-4">
+          <label class="d-block mb-2">Preferred Contact Method</label>
+          <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-outline-primary">
+              <input type="radio" name="contact" id="emailContact" /> Email
+            </label>
+            <label class="btn btn-outline-primary">
+              <input type="radio" name="contact" id="phoneContact" /> Phone Call
+            </label>
+          </div>
+        </div>
+        <!-- Message -->
+        <div class="form-group mb-4">
+          <label for="message">Your Message</label>
+          <textarea
+            class="form-control"
+            id="message"
+            rows="4"
+            placeholder="Tell us about your travel plans..."
+          ></textarea>
+        </div>
+        <!-- Preferences -->
+        <div class="form-group mb-4">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="newsletter" />
+            <label class="form-check-label" for="newsletter">
+              Subscribe to travel deals & updates
+            </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="terms"
+              required
+            />
+            <label class="form-check-label" for="terms">
+              I agree to the Terms & Privacy Policy
+            </label>
+          </div>
+        </div>
+        <!-- Buttons -->
+        <div class="text-center">
+          <button class="btn btn-primary px-4" type="submit">
+            Submit Request
+          </button>
+          <button class="btn btn-secondary px-4 ml-2" type="reset">
+            Reset
+          </button>
+        </div>
+      </form>
+    </div>
+    <!-- Success Alert (Hidden by default) -->
+    <div
+      id="submissionAlert"
+      class="alert alert-success fixed-bottom mx-auto mb-4 text-center shadow"
+      style="display: none; max-width: 400px; z-index: 1000"
+      role="alert"
+    >
+      <strong>Success!</strong> Your request has been submitted.
+      <button
+        type="button"
+        class="close ml-2"
+        onclick="document.getElementById('submissionAlert').style.display='none'"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+      <p>© 2017-2025 TravelVista — Explore. Dream. Discover.</p>
+    </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function showTravelType() {
+        document.getElementById("travelTypeSection").style.display = "block";
+      }
+
+      // Handle form submission and reset
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("contactForm");
+
+        // RESET Event
+        form.addEventListener("reset", function () {
+          setTimeout(() => {
+            // Remove active class from bootstrap button radios
+            document.querySelectorAll(".btn-group .btn").forEach((btn) => {
+              btn.classList.remove("active");
+            });
+
+            // Hide conditional sections
+            const travelTypeSection = document.getElementById(
+              "travelTypeSection"
+            );
+            if (travelTypeSection) travelTypeSection.style.display = "none";
+          }, 0);
+        });
+
+        // SUBMIT Event
+        form.addEventListener("submit", function (e) {
+          e.preventDefault(); // Prevent actual page reload
+
+          // Show the alert at the bottom
+          const alertBox = document.getElementById("submissionAlert");
+          alertBox.style.display = "block";
+
+          // Hide after 3 seconds
+          setTimeout(function () {
+            alertBox.style.display = "none";
+          }, 3000);
+
+          // Reset form to clear values
+          this.reset();
+        });
+      });
+    </script>
+  </body>
+</html>
